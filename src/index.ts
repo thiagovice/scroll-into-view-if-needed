@@ -25,7 +25,7 @@ function defaultBehavior(
   actions: CustomScrollAction[],
   behavior: ScrollBehavior = 'auto'
 ) {
-  const canSmoothScroll = 'scrollBehavior' in document.body.style
+  const canSmoothScroll = document.body && 'scrollBehavior' in document.body.style
 
   actions.forEach(({ el, top, left }) => {
     // browser implements the new Element.prototype.scroll API that supports `behavior`
